@@ -1,5 +1,7 @@
 package com.jcommerce.backend.persistence.domain.backend;
 
+import com.jcommerce.enums.RolesEnum;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -16,6 +18,14 @@ public class Role implements Serializable {
 
     public Role() {
 
+    }
+    /**
+     * Full constructor.
+     * @param rolesEnum
+     */
+    public Role(RolesEnum rolesEnum) {
+        this.id = rolesEnum.getId();
+        this.name = rolesEnum.getRoleName();
     }
 
     @Id
